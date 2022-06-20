@@ -101,3 +101,15 @@ uint64
 sys_avmem(void) {
   return (uint64)(kmemstat());
 }
+
+//get which syscall num from user-level
+uint64 
+sys_trace(void) {
+  int n;
+  // argint get int arg from user-level
+  if (argint(0, &n) < 0) {
+    return -1;
+  }
+  myproc()->tracemask = n;
+  return 0;
+}
