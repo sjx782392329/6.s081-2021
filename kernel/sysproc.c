@@ -95,3 +95,9 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
+
+//return available memory
+uint64
+sys_avmem(void) {
+  return (uint64)(kmemstat());
+}
