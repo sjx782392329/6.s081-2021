@@ -38,3 +38,4 @@ entry("sleep");
 entry("uptime");
 entry("avmem");
 entry("trace");
+entry("sysinfo");

@@ -95,3 +95,17 @@ kmemstat(void) {
   }
   return nums;
 }
+
+int 
+freemem(void) {
+  int sum = 0;
+  struct run *r;
+  acquire(&kmem.lock);
+  r = kmem.freelist;
+  release(&kmem.lock);
+  while (r) {
+    r = r->next;
+    sum += PGSIZE;
+  }
+  return sum;
+}

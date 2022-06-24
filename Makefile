@@ -200,6 +200,7 @@ UPROGS=\
 	$U/_xargs\
 	$U/_avmem\
 	$U/_trace\
+	$U/_sysinfotest\
 
 
 ifeq ($(LAB),$(filter $(LAB), pgtbl lock))
